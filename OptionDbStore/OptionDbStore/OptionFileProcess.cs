@@ -10,7 +10,6 @@ namespace OptionDbStore
     class OptionFileProcess
     {
         string sourceDir;
-        string outputDir;
 
         public OptionFileProcess(string sourceDir)
         {
@@ -51,7 +50,8 @@ namespace OptionDbStore
                     }
                     fs.Dispose();
                     sr.Dispose();
-                    File.WriteAllLines(this.outputDir + yearDir + "\\" + file.Name, contents);
+                    File.WriteAllLines(outputDir + yearDir + "\\" + file.Name, contents);
+                    Console.WriteLine("ocmpleted:" + outputDir + yearDir + "\\" + file.Name);
                 }
             }
         }
